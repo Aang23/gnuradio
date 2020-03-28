@@ -18,9 +18,9 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    noaa_hrpt_decoder.xml
-    noaa_hrpt_deframer.xml
-    noaa_hrpt_pll_cf.xml
-    DESTINATION ${GRC_BLOCKS_DIR}
+    noaa_hrpt_decoder.block.yml
+    noaa_hrpt_deframer.block.yml
+    noaa_hrpt_pll_cf.block.yml
+    DESTINATION share/gnuradio/grc/blocks
     COMPONENT "noaa_python"
 )

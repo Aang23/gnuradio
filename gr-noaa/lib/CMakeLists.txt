@@ -65,6 +65,7 @@ list(APPEND noaa_libs
 
 add_library(gnuradio-noaa SHARED ${noaa_sources})
 target_link_libraries(gnuradio-noaa ${noaa_libs})
+target_include_directories(gnuradio-noaa PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../include")
 GR_LIBRARY_FOO(gnuradio-noaa RUNTIME_COMPONENT "noaa_runtime" DEVEL_COMPONENT "noaa_devel")
 
 if(ENABLE_STATIC_LIBS)

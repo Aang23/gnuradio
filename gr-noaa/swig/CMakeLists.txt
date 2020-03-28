@@ -24,9 +24,11 @@ include(GrPython)
 include(GrSwig)
 
 set(GR_SWIG_INCLUDE_DIRS
+    "${CMAKE_CURRENT_SOURCE_DIR}/../include"
     ${GR_NOAA_INCLUDE_DIRS}
     ${GNURADIO_RUNTIME_SWIG_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIRS}
+    $<TARGET_PROPERTY:runtime_swig,INCLUDE_DIRECTORIES>
 )
 
 if(ENABLE_GR_CTRLPORT)
@@ -35,7 +37,7 @@ endif(ENABLE_GR_CTRLPORT)
 
 set(GR_SWIG_DOC_FILE ${CMAKE_CURRENT_BINARY_DIR}/noaa_swig_doc.i)
 set(GR_SWIG_DOC_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../include/gnuradio/noaa)
-set(GR_SWIG_DOCS_TARGET_DEPS runtime_swig_swig_doc)
+set(GR_SWIG_DOCS_TARGET_DEPS runtime_swig runtime_swig_swig_doc)
 
 set(GR_SWIG_LIBRARIES gnuradio-noaa)
 
